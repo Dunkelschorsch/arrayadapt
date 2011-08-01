@@ -1,6 +1,7 @@
 #ifndef HAVE_ARRAYADAPT_TYPES_HPP
 #define HAVE_ARRAYADAPT_TYPES_HPP
 
+namespace arrayadapt {
 // float/double
 typedef ArrayAdapter<double, 1> double_vector;
 typedef ArrayAdapter<const double, 1> const_double_vector;
@@ -52,6 +53,7 @@ typedef ArrayAdapter<const int32_t, 1> const_int32_vector;
 
 typedef ArrayAdapter<int32_t, 2> int32_matrix;
 typedef ArrayAdapter<const int32_t, 2> const_int32_matrix;
+}
 
-#endif // HAVE_ARRAYADAPT_TYPES_HPP
+#endif  // HAVE_ARRAYADAPT_TYPES_HPP
 

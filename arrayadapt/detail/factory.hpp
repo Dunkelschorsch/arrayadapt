@@ -1,8 +1,14 @@
 #ifndef HAVE_DETAIL_FACTORY_HPP
 #define HAVE_DETAIL_FACTORY_HPP
 
+namespace arrayadapt {
+/*
+ *
+ */
 namespace detail {
-
+/*
+ *
+ */
 template  <class DataT, size_t kDims, template<class, size_t> class AdapterT>
 struct Factory { };
 
@@ -102,5 +108,6 @@ struct Factory<DataT, 3, AdapterT> {
   }
 };  // struct Factory<DataT, 3, AdapterT>
 }  // namespace detail
+}  // namespace arrayadapt
 
 #endif  // HAVE_DETAIL_FACTORY_HPP

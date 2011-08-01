@@ -1,8 +1,14 @@
 #ifndef HAVE_DETAIL_GET_HPP
 #define HAVE_DETAIL_GET_HPP
 
+namespace arrayadapt {
+/*
+ *
+ */
 namespace detail {
-
+/*
+ *
+ */
 template <class DataT, size_t kDims, template<class, size_t> class AdapterT>
 struct Getter { };
 
@@ -74,6 +80,7 @@ typedef AdapterT<DataT, 3> concrete_adaptor_t;
   }
 };  // struct Getter<DataT, 3, AdapterT>
 }  // namespace detail
+}  // namespace arrayadapt
 
 #endif  // HAVE_DETAIL_GET_HPP
 
