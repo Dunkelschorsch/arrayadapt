@@ -48,30 +48,30 @@ struct imag {
 }  // namespace ptr_access
 
 
-template <class dataT, size_t kDims>
+template <class DataT, size_t kDims>
 class ArrayAdapter :
-    public detail::Getter<kDims, dataT, ArrayAdapter<dataT, kDims> >,
-    public detail::Factory<kDims, ArrayAdapter<dataT, kDims> > {
+    public detail::Getter<DataT, kDims, ArrayAdapter >,
+    public detail::Factory<DataT, kDims, ArrayAdapter > {
       /*
        *
        */
      public:
-      friend class detail::Getter<kDims, dataT, ArrayAdapter<dataT, kDims> >;
-      friend class detail::Factory<kDims, ArrayAdapter<dataT, kDims> >;
+      friend class detail::Getter<DataT, kDims, ArrayAdapter >;
+      friend class detail::Factory<DataT, kDims, ArrayAdapter >;
 
-      typedef dataT value_type;
+      typedef DataT value_type;
 
       ArrayAdapter() { }
 
       // BEWARE!! this guy does not do any bounds checking, even in debug mode!
-      inline dataT& operator[](size_t i) const {
+      inline DataT& operator[](size_t i) const {
         return mat_[i];
       }
 
      protected:
-      explicit ArrayAdapter(void* const mat) : mat_(static_cast<dataT*>(mat)) { }
+      explicit ArrayAdapter(void* const mat) : mat_(static_cast<DataT*>(mat)) { }
 
-      dataT *mat_;
+      DataT *mat_;
       size_t dimensions[kDims];
       static const size_t num_dims = kDims;
     };
