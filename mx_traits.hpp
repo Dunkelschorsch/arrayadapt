@@ -204,4 +204,4 @@ template<> struct mx_traits<const int8_t> {
   }
 };
 
-#endif
+#endif  // HAVE_MX_TRAITS_HPP

@@ -44,7 +44,7 @@ for type_curr in c_type:
 		full_type = constness + type_curr
 		mx_traits_header.write(trait_template % (full_type, full_type, c_to_mx_typename(type_curr, special_map), full_type))
 
-mx_traits_header.write("#endif\n")
+mx_traits_header.write("#endif  // HAVE_MX_TRAITS_HPP\n")
 
 mx_traits_header.close()
 
