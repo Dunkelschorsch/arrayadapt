@@ -27,8 +27,8 @@
 #include <matrix.h>
 #include <mex.h>
 #include <mx_traits.hpp>
-#include <arrayadapt/detail/get.hpp>
-#include <arrayadapt/detail/factory.hpp>
+#include "./detail/get.hpp"
+#include "./detail/factory.hpp"
 
 namespace ptr_access {
 /*
