@@ -1,7 +1,7 @@
 #ifndef HAVE_ALGO_ROWWISE_HPP
 #define HAVE_ALGO_ROWWISE_HPP
 
-#include "mex.h"
+#include <mex.h>
 #include <algorithm>
 
 template <class T>
