@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <matrix.h>
 #include <mex.h>
-#include <mx_traits.hpp>
+#include "../mx_traits.hpp"
 #include "./detail/get.hpp"
 #include "./detail/factory.hpp"
 
