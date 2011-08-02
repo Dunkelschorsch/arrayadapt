@@ -34,7 +34,7 @@ template<> struct mx_traits<%s> {
 
 """
 
-mx_traits_header = open('mx_traits.hpp', 'wt')
+mx_traits_header = open('include/mx_traits.hpp', 'wt')
 
 mx_traits_header.write(header_guard)
 mx_traits_header.write(empty_trait)
