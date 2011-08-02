@@ -21,8 +21,7 @@ struct Factory<DataT, 1, AdapterT> {
 
   template <class RealOrImag>
   static inline concrete_adapter_t wrap(const mxArray* u, size_t length) {
-    mxAssert(mxGetClassID(u) ==
-             mx_traits<concrete_adapter_t::value_type>::classId,
+    mxAssert(mxGetClassID(u) == mx_traits<DataT>::classId,
              "ArrayAdapter::wrap(): differing Matlab/C types");
     return wrap(RealOrImag::get_ptr(u), length);
   }
@@ -46,8 +45,7 @@ struct Factory<DataT, 2, AdapterT> {
 
   template <class RealOrImag>
   static inline concrete_adapter_t wrap(const mxArray* u, size_t nrows, size_t ncols) {
-    mxAssert(mxGetClassID(u) ==
-             mx_traits<concrete_adapter_t::value_type>::classId,
+    mxAssert(mxGetClassID(u) == mx_traits<DataT>::classId,
              "ArrayAdapter::wrap(): differing Matlab/C types");
     mxAssert(mxGetNumberOfDimensions(u) == 2,
              "ArrayAdapter::wrap(): wrong number of dimensions");
@@ -80,8 +78,7 @@ struct Factory<DataT, 3, AdapterT> {
                                         size_t d1,
                                         size_t d2,
                                         size_t d3) {
-    mxAssert(mxGetClassID(u) ==
-             mx_traits<concrete_adapter_t::value_type>::classId,
+    mxAssert(mxGetClassID(u) == mx_traits<DataT>::classId,
              "ArrayAdapter::wrap(): differing Matlab/C types");
     mxAssert(mxGetNumberOfDimensions(u) == 3,
              "ArrayAdapter::wrap(): wrong number of dimensions");
