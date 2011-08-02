@@ -12,8 +12,8 @@ def c_to_mx_typename(c_type, special_map):
 		mx_type = special_map[c_type]
 	return mx_type.upper()
 
-c_type = ('void', 'double', 'float', 'uint64_t', 'int64_t', 'uint32_t', 'int32_t', 'uint16_t', 'int16_t', 'uint8_t', 'int8_t')
-special_map = {'float': 'single' }
+c_type = ('void', 'bool', 'double', 'float', 'uint64_t', 'int64_t', 'uint32_t', 'int32_t', 'uint16_t', 'int16_t', 'uint8_t', 'int8_t')
+special_map = {'float': 'single', 'bool': 'logical' }
 
 empty_trait = "template <class T>\nstruct mx_traits { };\n\n"
 header_guard = """#ifndef HAVE_MX_TRAITS_HPP

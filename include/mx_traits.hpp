@@ -24,6 +24,24 @@ template<> struct mx_traits<const void> {
   }
 };
 
+// bool
+template<> struct mx_traits<bool> {
+  static const mxClassID classId = mxLOGICAL_CLASS;
+
+  static inline const char* name() {
+    return "bool";
+  }
+};
+
+// const bool
+template<> struct mx_traits<const bool> {
+  static const mxClassID classId = mxLOGICAL_CLASS;
+
+  static inline const char* name() {
+    return "const bool";
+  }
+};
+
 // double
 template<> struct mx_traits<double> {
   static const mxClassID classId = mxDOUBLE_CLASS;
