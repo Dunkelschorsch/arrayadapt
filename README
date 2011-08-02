@@ -35,4 +35,4 @@ On my systems (tested on gcc 4.5 and 4.6) there is no trace left of it in the
 resulting assembly. No function calls, no classes, no nothing.
 
 All files in this repository (https://github.com/Dunkelschorsch/arrayadapt)
-are licensed under the MIT license. See the LICENSE file.
+are licensed under the BSD license. See the LICENSE file.
