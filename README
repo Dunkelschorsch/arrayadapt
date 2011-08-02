@@ -4,7 +4,7 @@ arrayadapt provides a convient way to access mxArrays in MATLAB's .mex files.
 The 'ArrayAdaptor' class template can be specialzed for one of the builtin
 numeric types and a fixed number of dimensions. It allows for subscripted
 indexing in additon to using C's []-indexing style.
-An array is constructed to be n-dimensional will only take 'n' arguments for
+An array which is constructed to be n-dimensional will only take 'n' arguments for
 specifying the size of each dimension in the constructor. Specifying a different
 number will result in a compiler-error. Furthermore, also the indexing
 operator will take exactly 'n' arguments. Providing more or less than 'n' indices
@@ -13,7 +13,7 @@ will result in a compiler-error, again. One source of headache eliminated.
 Currently, one- through three-dimensional arrays of any numeric type can be
 wrapped, but extending to an arbitrary number of dimensions can be easily done
 by implementing two simple class templates. One that takes care of construction
-and one that encapsulated element access.
+and one that encapsulates element access.
 
 If debug mode is active for your mex-file, bounds-checking on element access
 and type-checking on construction is done (at runtime, of course).
@@ -27,7 +27,7 @@ used to provide a consistent way to get the mxClassID associated with the
 numeric types in C.
 
 In order to use arrayadapt your compiler should have proper support for C99's
-exact-width integer types (<stdint.h>).
+exact-width integer types (defined in stdint.h).
 
 On performance:
 Any decent compiler should be able to strip away the arrayadapt extras completely.
