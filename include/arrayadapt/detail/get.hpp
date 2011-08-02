@@ -37,7 +37,7 @@ struct Getter<DataT, 2, AdapterT> {
    *
    */
   typedef AdapterT<DataT, 2> concrete_adaptor_t;
-  
+
   inline DataT& operator()(size_t i, size_t j) const {
     mxAssert(i < getRows(), "ArrayAdapter::operator(): row index out of bounds.");
     mxAssert(j < getCols(), "ArrayAdapter::operator(): column index out of bounds.");
@@ -60,22 +60,26 @@ struct Getter<DataT, 3, AdapterT> {
   /*
    *
    */
-typedef AdapterT<DataT, 3> concrete_adaptor_t;
+  typedef AdapterT<DataT, 3> concrete_adaptor_t;
 
   inline DataT& operator()(size_t i, size_t j, size_t k) const {
-    mxAssert(i < getDim<0>(),
+    mxAssert(i < getSize<0>(),
              "ArrayAdapter::operator(): index for dimension 1 out of bounds.");
-    mxAssert(i < getDim<1>(),
+    mxAssert(i < getSize<1>(),
              "ArrayAdapter::operator(): index for dimension 2 out of bounds.");
-    mxAssert(i < getDim<2>(),
+    mxAssert(i < getSize<2>(),
              "ArrayAdapter::operator(): index for dimension 3 out of bounds.");
 
     return static_cast<const concrete_adaptor_t*>(this)->
-        mat_[i + getDim<0>() * (j + k * getDim<1>())];
+        mat_[i + getSize<0>() * (j + k * getSize<1>())];
   }
 
   template <size_t D>
-  inline size_t getDim() const {
+  inline size_t getSize() const {
+    return static_cast<const concrete_adaptor_t*>(this)->dimensions[D];
+  }
+
+  inline size_t getSize(size_t D) const {
     return static_cast<const concrete_adaptor_t*>(this)->dimensions[D];
   }
 };  // struct Getter<DataT, 3, AdapterT>
