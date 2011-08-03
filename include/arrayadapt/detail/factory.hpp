@@ -27,8 +27,8 @@ struct Factory<DataT, 1, AdapterT> {
   }
 
   static inline concrete_adapter_t wrap(void* const mxarray, size_t length) {
-    mxAssert(length > 1,
-             "ArrayAdapter::wrap(): singleton dimension given (1-dimensional)");
+    mxAssert(length > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (1 of 1) given");
 
     concrete_adapter_t a(mxarray);
     a.dimensions[0] = length;
@@ -54,10 +54,10 @@ struct Factory<DataT, 2, AdapterT> {
   }
 
   static inline concrete_adapter_t wrap(void* const mxarray, size_t nrows, size_t ncols) {
-    mxAssert(nrows > 1,
-             "ArrayAdapter::wrap(): singleton dimension (1 of 2) given");
-    mxAssert(ncols > 1,
-             "ArrayAdapter::wrap(): singleton dimension (2 of 2) given");
+    mxAssert(nrows > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (1 of 2) given");
+    mxAssert(ncols > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (2 of 2) given");
 
     concrete_adapter_t a(mxarray);
     a.dimensions[0] = nrows;
@@ -90,12 +90,12 @@ struct Factory<DataT, 3, AdapterT> {
                                         size_t d1,
                                         size_t d2,
                                         size_t d3) {
-    mxAssert(d1 > 1,
-             "ArrayAdapter::wrap(): singleton dimension (1 of 3) given ");
-    mxAssert(d2 > 1,
-             "ArrayAdapter::wrap(): singleton dimension (2 of 3) given ");
-    mxAssert(d3 > 1,
-             "ArrayAdapter::wrap(): singleton dimension (3 of 3) given ");
+    mxAssert(d1 > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (1 of 3) given ");
+    mxAssert(d2 > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (2 of 3) given ");
+    mxAssert(d3 > 0,
+             "ArrayAdapter::wrap(): zero-size dimension (3 of 3) given ");
 
     concrete_adapter_t a(mxarray);
     a.dimensions[0] = d1;
