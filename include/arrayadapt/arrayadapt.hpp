@@ -31,14 +31,14 @@ struct imag {
 
 template <class DataT, size_t kDims>
 class ArrayAdapter :
-    public detail::Getter<DataT, kDims, ArrayAdapter >,
-    public detail::Factory<DataT, kDims, ArrayAdapter > {
+    public detail::Getter<DataT, kDims, ArrayAdapter>,
+    public detail::Factory<DataT, kDims, ArrayAdapter> {
       /*
        *
        */
      public:
-      friend class detail::Getter<DataT, kDims, ArrayAdapter >;
-      friend class detail::Factory<DataT, kDims, ArrayAdapter >;
+      friend struct detail::Getter<DataT, kDims, arrayadapt::ArrayAdapter>;
+      friend struct detail::Factory<DataT, kDims, arrayadapt::ArrayAdapter>;
 
       typedef DataT value_type;
 
